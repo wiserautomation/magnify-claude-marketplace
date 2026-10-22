@@ -1,0 +1,11 @@
+{
+  "name": "magnify-google-ads",
+  "version": "1.0.0",
+  "description": "Evidence-based Google Ads, Shopping, Performance Max and Merchant Center diagnostics with approval-gated optimization through Magnify.",
+  "author": {
+    "name": "Magnify",
+    "url": "https://magnifyshopping.com"
+  },
+  "homepage": "https://magnifyshopping.com",
+  "repository": "https://github.com/wiserautomation/magnify"
+}
