@@ -36,3 +36,11 @@ See [REVIEWER_GUIDE.md](REVIEWER_GUIDE.md). Suggested prompts: “List my stores
 Claude OAuth and tool discovery not demonstrated in this audit. Magnify Operator's live write execution and Brain B final-answer reliability are not fully certified. External endpoint/legal-page accessibility from Anthropic has not been independently verified. **Do not claim submitted/approved.**
 
 Submit via Anthropic's authenticated Claude directory portal, selecting the GitHub plugin-bundle route; final portal interaction and owner agreement require the authorized account owner.
+
+## Validation evidence (2026-10-26, Claude Code 2.1.310)
+- `node scripts/validate.mjs`: PASSED (17/17 checks).
+- `claude plugin validate .`: passed.
+- `claude plugin validate ./plugins/magnify-google-ads`: passed.
+- `--profile directory` on the plugin folder: passed with no problems or warnings (MIT LICENSE and symbol-only 1024 px icon added).
+- Claude OAuth connection and `list_stores` observed working from Claude (connector connected, 6 authorized workspaces returned).
+- Not verified from the build environment: public reachability of magnifyshopping.com legal/support pages and MCP/OAuth metadata (outbound access to that domain was blocked there).
