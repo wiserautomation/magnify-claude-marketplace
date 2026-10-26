@@ -16,3 +16,8 @@ No credentials are bundled. Server endpoint: `https://mcp.magnifyshopping.com/mc
 Privacy: https://www.magnifyshopping.com/privacy
 Terms: https://www.magnifyshopping.com/terms
 Support: https://www.magnifyshopping.com/support
+
+## Install
+```
+/plugin install magnify-google-ads --marketplace wiserautomation/magnify-claude-marketplace
+```

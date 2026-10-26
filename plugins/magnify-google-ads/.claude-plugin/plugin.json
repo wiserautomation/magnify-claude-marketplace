@@ -7,5 +7,6 @@
     "url": "https://magnifyshopping.com"
   },
   "homepage": "https://magnifyshopping.com",
-  "repository": "https://github.com/wiserautomation/magnify-claude-marketplace"
+  "repository": "https://github.com/wiserautomation/magnify-claude-marketplace",
+  "privacyPolicyUrl": "https://www.magnifyshopping.com/privacy"
 }
