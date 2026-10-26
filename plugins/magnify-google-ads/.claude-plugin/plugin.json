@@ -1,7 +1,7 @@
 {
   "name": "magnify-google-ads",
   "version": "1.0.0",
-  "description": "Evidence-based Google Ads, Shopping, Performance Max and Merchant Center diagnostics with approval-gated optimization through Magnify.",
+  "description": "Connect Claude to your Google Ads account through Magnify. Analyze real performance data, identify optimization opportunities, and prepare supervised campaign changes with explicit approval.",
   "author": {
     "name": "Magnify",
     "url": "https://magnifyshopping.com"
@@ -10,5 +10,16 @@
   "repository": "https://github.com/wiserautomation/magnify-claude-marketplace",
   "privacyPolicyUrl": "https://www.magnifyshopping.com/privacy",
   "license": "MIT",
-  "icon": "./.claude-plugin/icon.png"
+  "icon": "./.claude-plugin/icon.png",
+  "displayName": "Magnify — Google Ads Intelligence",
+  "keywords": [
+    "google-ads",
+    "ppc",
+    "performance-max",
+    "shopping",
+    "merchant-center",
+    "roas",
+    "advertising",
+    "magnify"
+  ]
 }

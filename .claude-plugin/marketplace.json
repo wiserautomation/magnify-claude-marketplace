@@ -9,7 +9,7 @@
     {
       "name": "magnify-google-ads",
       "source": "./plugins/magnify-google-ads",
-      "description": "Analyze Google Ads and Merchant Center with account evidence. Prepare changes and require explicit approval before execution.",
+      "description": "Connect Claude to your Google Ads account through Magnify. Analyze real performance data, identify optimization opportunities, and prepare supervised campaign changes with explicit approval.",
       "version": "1.0.0",
       "category": "productivity"
     }
