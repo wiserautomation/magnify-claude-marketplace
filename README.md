@@ -1,43 +1,28 @@
-# Magnify for Claude — Plugin Marketplace
+# Magnify for Claude — Google Ads Intelligence
 
-Install **Magnify Google Ads Intelligence** in Claude with our public plugin marketplace. The plugin connects to Magnify's existing remote MCP endpoint; no secrets, client accounts or backend code are included in this repository.
+Magnify exposes authorized Google Ads and Merchant Center intelligence to Claude through a remote MCP connector plus specialist Skills. This is a publicly installable GitHub marketplace, **not** official Anthropic directory approval.
 
-## Install in Claude
+## Install
+In Claude's plugin marketplace, add `https://github.com/wiserautomation/magnify-claude-marketplace`, sync and install `magnify-google-ads`. Alternatively, under **Customize → Connectors**, add the remote MCP server `https://mcp.magnifyshopping.com/mcp`. Authenticate using Claude's supported OAuth process; never paste tokens into chat.
 
-1. Open **Customize → Plugins → Add → Add marketplace** in Claude.
-2. Enter `https://github.com/wiserautomation/magnify-claude-marketplace` (or `wiserautomation/magnify-claude-marketplace`).
-3. Click **Sync**. Find **magnify-google-ads** and install/enable it.
-4. Connect your Magnify account through Claude's supported MCP/OAuth flow if prompted. Select your authorized store.
-5. Start with “List my authorized stores” or “Audit my Google Ads performance over the last 30 days.”
+Start with “List my authorized stores” or “Which campaigns spent last week, including those now paused?”
 
-## What Magnify does
+## Capabilities and boundaries
+- `google-ads-audit`: evidence-backed performance and conversion diagnostics.
+- `shopping-pmax`: Shopping, PMax and Merchant Center investigations when connected data exists.
+- `supervised-optimization`: supported changes are proposed, require real owner approval and must be verified after execution.
 
-- Google Ads account health, spend, conversion, CPA/ROAS audits and wasted-budget analysis based on available authorized tools.
-- Shopping, Performance Max and Merchant Center diagnostics.
-- Supervised change preparation with explicit approval requirements, where the client supports the workflow.
+Availability depends on user, store permissions, tool support and live evidence. We **do not** promise unrestricted Google Ads writes or an inline Claude approval widget.
 
-The service endpoint is `https://mcp.magnifyshopping.com/mcp`.
+## Verification
+Run `node scripts/validate.mjs` to check the package offline. Where Claude Code CLI is available, run `claude plugin validate .` and `claude plugin validate ./plugins/magnify-google-ads`. Neither proves OAuth/live MCP readiness.
 
-## Validate in Claude Code
+See [submission gates](SUBMISSION.md) and [reviewer guide](REVIEWER_GUIDE.md) before an official Anthropic directory submission.
 
-```sh
-claude plugin validate .
-claude plugin validate ./plugins/magnify-google-ads
-claude plugin marketplace add wiserautomation/magnify-claude-marketplace
-claude plugin install magnify-google-ads@magnify-marketplace
-```
-
-## Important distinctions
-
-This is an **independently hosted public marketplace**, installable by URL; it is **not an official curated listing** in Anthropic's discovery directory. Official discovery requires an additional Anthropic submission and approval. Local installation also does not certify remote OAuth, live data, or write execution.
-
-## Trust and support
-
-No credentials are embedded. All Google Ads access is subject to Magnify's per-user/per-store grants. Do not paste passwords or OAuth tokens into Claude. Supported mutations require explicit approval and subsequent verification.
+## Security/support
+No credentials are packaged. Google Ads access is authorized per user/store. Actions require independent consent and readback where supported.
 
 - Website: https://magnifyshopping.com
 - Privacy: https://www.magnifyshopping.com/privacy
 - Terms: https://www.magnifyshopping.com/terms
 - Support: https://www.magnifyshopping.com/support
-
-See [Submission checklist](SUBMISSION.md) for review gates.
