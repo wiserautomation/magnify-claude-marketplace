@@ -41,6 +41,6 @@ Submit via Anthropic's authenticated Claude directory portal, selecting the GitH
 - `node scripts/validate.mjs`: PASSED (17/17 checks).
 - `claude plugin validate .`: passed.
 - `claude plugin validate ./plugins/magnify-google-ads`: passed.
-- `--profile directory` on the plugin folder: passed with no problems or warnings (MIT LICENSE and 1024 px icon added).
+- `--profile directory` on the plugin folder: passed with no problems or warnings (MIT LICENSE and symbol-only 1024 px icon added).
 - Claude OAuth connection and `list_stores` observed working from Claude (connector connected, 6 authorized workspaces returned).
 - Not verified from the build environment: public reachability of magnifyshopping.com legal/support pages and MCP/OAuth metadata (outbound access to that domain was blocked there).
