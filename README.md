@@ -12,6 +12,7 @@ Start with “List my authorized stores” or “Which campaigns spent last week
 - `shopping-pmax`: Shopping, PMax and Merchant Center investigations when connected data exists.
 - `supervised-optimization`: supported changes are proposed, require real owner approval and must be verified after execution.
 - `google-ads-copywriting`: Search RSA and PMax headlines and descriptions (qualify, entice, prime) with dynamic keyword insertion `{KeyWord:Default}` headlines. Copy for your account goes through Magnify, which reviews every line before it can be proposed.
+- `negative-keywords`: phrase-match negative patterns instead of one exact negative per query, safety checks against converting terms and keywords, and shared negative keyword lists.
 - `keyword-research`: Keyword Planner volumes and bids, search intent classification, ad groups and a campaign structure sized to your budget and target CPA.
 
 Availability depends on user, store permissions, tool support and live evidence. We **do not** promise unrestricted Google Ads writes or an inline Claude approval widget.

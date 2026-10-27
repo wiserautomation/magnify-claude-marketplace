@@ -7,6 +7,7 @@ Evidence-backed Google Ads and Merchant Center intelligence in Claude, powered b
 - Investigate Shopping, PMax and Merchant Center feeds with available data.
 - Write Search and PMax headlines and descriptions with the Magnify Ad Copy Skill, including dynamic keyword insertion headlines.
 - Research keywords with real Keyword Planner volumes, group them by search intent and size the campaign structure to the budget and CPA.
+- Turn wasted search terms into a few phrase-match negative patterns and shared negative keyword lists.
 - Prepare supported changes for explicit preview and approval; execution is not automatic.
 
 ## Getting started
