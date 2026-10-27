@@ -5,6 +5,8 @@ Evidence-backed Google Ads and Merchant Center intelligence in Claude, powered b
 ## What it does
 - Audit Google Ads spend, conversions, campaign efficiency and account health where authorized read tools provide evidence.
 - Investigate Shopping, PMax and Merchant Center feeds with available data.
+- Write Search and PMax headlines and descriptions with the Magnify Ad Copy Skill, including dynamic keyword insertion headlines.
+- Research keywords with real Keyword Planner volumes, group them by search intent and size the campaign structure to the budget and CPA.
 - Prepare supported changes for explicit preview and approval; execution is not automatic.
 
 ## Getting started
