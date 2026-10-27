@@ -10,7 +10,7 @@
       "name": "magnify-google-ads",
       "source": "./plugins/magnify-google-ads",
       "description": "Connect Claude to your Google Ads account through Magnify. Analyze real performance data, identify optimization opportunities, and prepare supervised campaign changes with explicit approval.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "category": "productivity"
     }
   ]
