@@ -1,7 +1,7 @@
 {
   "name": "magnify-google-ads",
-  "version": "1.2.0",
-  "description": "Connect Claude to your Google Ads account through Magnify. Analyze real performance data, identify optimization opportunities, and prepare supervised campaign changes with explicit approval.",
+  "version": "1.5.0",
+  "description": "Roast your Google Ads: find wasted spend and fix it in chat. Evidence-based Google Ads, Shopping, Performance Max and Merchant Center diagnostics with approval-gated optimization through Magnify.",
   "author": {
     "name": "Magnify",
     "url": "https://magnifyshopping.com"

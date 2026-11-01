@@ -1,46 +1,79 @@
-# Official Claude directory submission readiness
+# Anthropic directory submission packet
 
-**Package:** GitHub plugin bundle containing remote MCP + Skills. Anthropic's official Claude directory review is separate from a public GitHub marketplace installation.
+Submit two listings from the same organization in the [developer portal](https://claude.ai/directory/manage): the MCP connector first, then the plugin bundle, and pair them. The owner enters credentials and accepts the terms and acknowledgements personally. Never put credentials in this file.
 
-**Name:** Magnify — Google Ads Intelligence
-**Short pitch:** Analyze your authorized Google Ads performance with real account evidence in Claude.
-**Category:** Marketing / Productivity
-**Repository:** https://github.com/wiserautomation/magnify-claude-marketplace
-**MCP:** https://mcp.magnifyshopping.com/mcp
-**Website:** https://magnifyshopping.com
-**Privacy:** https://www.magnifyshopping.com/privacy
-**Terms:** https://www.magnifyshopping.com/terms
-**Support:** https://www.magnifyshopping.com/support
+## 1. MCP connector
 
-## Static checks
-Run `node scripts/validate.mjs`. Optionally capture `claude plugin validate .` and `claude plugin validate ./plugins/magnify-google-ads` output and CLI version. Static checks do NOT certify live OAuth or Google Ads execution.
+| Portal field | Value |
+| --- | --- |
+| Server URL | `https://mcp.magnifyshopping.com/mcp` (universal URL) |
+| Server name | Magnify — Google Ads Intelligence |
+| One-liner | Roast your Google Ads, find wasted spend and prepare fixes you approve, using real account evidence. |
+| Categories | Marketing, Productivity |
+| Documentation URL | https://github.com/wiserautomation/magnify-claude-marketplace/blob/main/plugins/magnify-google-ads/README.md |
+| Privacy policy URL | https://www.magnifyshopping.com/privacy |
+| Support contact | https://www.magnifyshopping.com/support |
+| Icon | `plugins/magnify-google-ads/.claude-plugin/icon.png` (1024 × 1024 PNG) |
+| Slug (permanent) | `magnify` |
+| Allowed link URIs | `https://magnifyshopping.com`, `https://www.magnifyshopping.com` |
+| Company | WISER MARKETING SRL, https://magnifyshopping.com |
+| Primary contact | alejandro@wiserautomation.agency |
+| Authentication | OAuth sign-in, Dynamic Client Registration. Do not enter an Anthropic-held client. |
+| Reads or writes | Both. Writes are prepared as previews and applied only after owner approval in Magnify. |
+| Underlying API | Magnify's own service, which reads Google Ads and Merchant Center through Magnify's own Google integration for accounts each user authorizes. |
+| Personal health data, sponsored content | No |
 
-## Evidence checklist — leave unchecked until independently proven
-- [ ] Claude CLI validates marketplace and plugin; attach version/output.
-- [ ] Claude.ai/Claude Desktop installs bundle and lists remote MCP tools.
-- [ ] Public HTTPS MCP initialize and tool discovery work from Claude's cloud.
-- [ ] OAuth authorize, workspace selection, reconnect, refresh and revoke verified.
-- [ ] Authorized users can see only their own stores; cross-tenant requests fail.
-- [ ] Real read-only Google Ads query returns correct campaign IDs, currency, dates and spend (including paused-with-spend).
-- [ ] Failed/partial reads never produce fabricated account metrics.
-- [ ] Real signed preview, expiry, rejection and no-write-before-approval tested.
-- [ ] If write actions are advertised, controlled approved execution plus independent Google Ads readback passed; otherwise describe read-only support only.
-- [ ] Public privacy/terms/support pages and OAuth metadata validated.
-- [ ] Reviewer test account, reproducible prompts, screenshots and data-handling disclosures prepared.
-- [ ] Official Claude portal submission completed with saved submission ID.
+**Description**
 
-## Reviewer walkthrough
-See [REVIEWER_GUIDE.md](REVIEWER_GUIDE.md). Suggested prompts: “List my stores”; “Which campaigns spent in the last 7 days, including currently paused campaigns?”; “Analyze Performance Max performance with evidence”; “Prepare, do not execute, a campaign change.”
+Magnify connects Claude to the Google Ads and Merchant Center accounts you authorize, so answers come from your real account data instead of generic advice.
 
-## Outstanding as of 2026-10-26
-Claude OAuth and tool discovery not demonstrated in this audit. Magnify Operator's live write execution and Brain B final-answer reliability are not fully certified. External endpoint/legal-page accessibility from Anthropic has not been independently verified. **Do not claim submitted/approved.**
+Roast and grade your account, find search terms, products and campaigns that spend without recorded conversions, diagnose campaign delivery and conversion setup, audit Performance Max and Shopping, and review feed health and catalogue experiments. Magnify reports what it can verify and says when data is missing, stale or unknown.
 
-Submit via Anthropic's authenticated Claude directory portal, selecting the GitHub plugin-bundle route; final portal interaction and owner agreement require the authorized account owner.
+Magnify can also prepare supported Google Ads changes, such as pausing a campaign, updating a budget or adding negative keywords. Every change starts as an exact preview. The workspace owner approves it on the signed-in Magnify page, then Magnify applies it and reads the result back from Google Ads. Nothing changes because of a message in chat.
 
-## Validation evidence (2026-10-26, Claude Code 2.1.310)
-- `node scripts/validate.mjs`: PASSED (17/17 checks).
-- `claude plugin validate .`: passed.
-- `claude plugin validate ./plugins/magnify-google-ads`: passed.
-- `--profile directory` on the plugin folder: passed with no problems or warnings (MIT LICENSE and symbol-only 1024 px icon added).
-- Claude OAuth connection and `list_stores` observed working from Claude (connector connected, 6 authorized workspaces returned).
-- Not verified from the build environment: public reachability of magnifyshopping.com legal/support pages and MCP/OAuth metadata (outbound access to that domain was blocked there).
+Amounts are observed spend to review, not guaranteed savings. Magnify does not promise ROAS improvements.
+
+**Use cases:** find wasted spend; audit a Google Ads account; diagnose a drop in performance; audit Performance Max, Shopping and Merchant Center feeds; prepare supervised Google Ads changes.
+
+**Before connecting:** a Magnify account with a Google Ads account connected. Account reads are included. Applying changes needs a paid Operator plan on that workspace.
+
+**Carousel (MCP App):** 3–5 PNGs, at least 1000 px wide, cropped to the card only, each with its prompt supplied separately. Capture from a real Claude session on the test account: home, account overview, money leaks, roast, proposed change.
+
+**Test & launch:** paste the steps from [REVIEWER_GUIDE.md](REVIEWER_GUIDE.md), then enter the test account credentials.
+
+**Compliance:** seven acknowledgements, accepted by the owner.
+
+## 2. Plugin bundle
+
+| Portal field | Value |
+| --- | --- |
+| Repository | `wiserautomation/magnify-claude-marketplace` |
+| Plugin path | `plugins/magnify-google-ads` |
+| Branch | `main` |
+| Reads or stores personal data | Through the Magnify connector only: account and advertising data the user authorizes |
+| Sends data to services other than declared connectors | No |
+| Retention | Per the privacy policy |
+| Intended for people under 18 | No |
+| New versions | GitHub push webhook |
+
+**Compliance:** check the contact email, then four acknowledgements, accepted by the owner.
+
+## Release gates
+
+Evidence as of 2026-11-01. A box stays unchecked until it is proven on the deployed revision.
+
+- [x] Public HTTPS `initialize`, `tools/list` and `resources/list` answer.
+- [x] Signed-out `tools/call` returns 401 with a `resource_metadata` pointer.
+- [x] OAuth metadata advertises DCR, S256 PKCE, refresh and revocation, and the redirect policy accepts Claude's callback and loopback.
+- [x] Privacy, terms and support pages are live.
+- [x] 59 tools, each with a name under 64 characters and a read-only or destructive hint.
+- [ ] `title` on every tool is **deployed**. Source is fixed; until it is live the portal flags all 59 tools.
+- [ ] Tested as a custom connector on the deployed revision: fresh OAuth, refresh, revoke, tool calls.
+- [ ] The owner has run every tool, as the Test & launch step requires them to confirm.
+- [ ] Test account opens a populated workspace, with seeded data inside the last 30 complete days.
+- [ ] Cross-tenant denial tested from Claude.
+- [ ] Carousel screenshots captured.
+- [ ] The privacy policy is reviewed for AI model providers, which it does not currently name.
+- [ ] Portal submission IDs recorded here.
+
+Static checks do not certify OAuth, live execution or Google Ads writes. Do not claim submitted or approved until the portal shows it.
