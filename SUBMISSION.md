@@ -10,7 +10,7 @@ Submit two listings from the same organization in the [developer portal](https:/
 | Server name | Magnify — Google Ads Intelligence |
 | One-liner | Roast your Google Ads, find wasted spend and prepare fixes you approve, using real account evidence. |
 | Categories | Marketing, Productivity |
-| Documentation URL | https://github.com/wiserautomation/magnify-claude-marketplace/blob/main/plugins/magnify-google-ads/README.md |
+| Documentation URL | https://magnifyshopping.com/advertising-infrastructure |
 | Privacy policy URL | https://www.magnifyshopping.com/privacy |
 | Support contact | https://www.magnifyshopping.com/support |
 | Icon | `plugins/magnify-google-ads/.claude-plugin/icon.png` (1024 × 1024 PNG) |
@@ -70,10 +70,11 @@ Evidence as of 2026-11-01. A box stays unchecked until it is proven on the deplo
 - [ ] `title` on every tool is **deployed**. Source is fixed; until it is live the portal flags all 59 tools.
 - [ ] Tested as a custom connector on the deployed revision: fresh OAuth, refresh, revoke, tool calls.
 - [ ] The owner has run every tool, as the Test & launch step requires them to confirm.
-- [ ] Test account opens a populated workspace, with seeded data inside the last 30 complete days.
+- [x] Sample workspace data renewed for the ChatGPT review (confirmed by the owner).
+- [ ] Test account signs in and reads that workspace from Claude.
 - [ ] Cross-tenant denial tested from Claude.
 - [ ] Carousel screenshots captured.
-- [ ] The privacy policy is reviewed for AI model providers, which it does not currently name.
+- [ ] Updated privacy policy published. It names the AI model providers and what Magnify receives from connected clients.
 - [ ] Portal submission IDs recorded here.
 
 Static checks do not certify OAuth, live execution or Google Ads writes. Do not claim submitted or approved until the portal shows it.

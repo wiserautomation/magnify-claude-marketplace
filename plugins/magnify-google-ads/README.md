@@ -38,6 +38,7 @@ The plugin makes no privileged calls outside MCP and does not bypass per-store a
 - **Results say syncing or unknown:** the first sync has not finished. Unknown is not zero, so try again later.
 - **A change did not apply:** open the approval link and approve it in Magnify. If Magnify reports no paid access, ask Claude for your Operator access link.
 
+Documentation: https://magnifyshopping.com/advertising-infrastructure
 Privacy: https://www.magnifyshopping.com/privacy
 Terms: https://www.magnifyshopping.com/terms
 Support: https://www.magnifyshopping.com/support
