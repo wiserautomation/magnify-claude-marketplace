@@ -4,4 +4,15 @@ description: Diagnose Shopping, Performance Max, Merchant Center product feeds, 
 ---
 # Shopping and Performance Max intelligence
 
-Identify the selected authorized store and Merchant Center/feed scope first. Use Magnify MCP product/feed/PMax reader tools that are actually available, never assumed. Report accurate feed IDs, locale, product identity and evidence freshness where available; distinguish Shopping and PMax visibility limitations. Evaluate product disapprovals, feed issues, title attributes, search-term signals and test outcomes only when the data supports them. No invented uplift, conversions or A/B winner claims; explain confidence and sample limitations. Present a prioritized optimization plan. Treat feed publication, campaign changes, labels and test activation as writes requiring a preview and explicit authorization.
+## 1. Get the answer through Magnify
+Call `list_stores` if the workspace is not obvious. Then call `ask_magnifai` (mode `investigate`) with the full objective, for example: "Audit my Performance Max and Shopping: which products and asset groups spend without returns, which feed issues block visibility, and which product titles need work." Follow its continuation until it returns an answer, a question or a proposal. MagnifAI reads the PMax diagnostics, products, feed health, search-term signals and catalogue experiments itself.
+
+Use direct reads such as `get_product_opportunities`, `get_catalog_summary` and `get_image_opportunities` only when the user asks for one specific report, when MagnifAI is unavailable, or when `list_stores` returns `data_mode=sample` or `sample_data=true` (synthetic demo data with no live connection). Label that output as a direct read.
+
+## 2. Present it
+- Lead with the few products, asset groups or feed issues that matter most, with their spend, revenue or ROAS from MagnifAI's evidence.
+- Distinguish Shopping from PMax visibility limits, and observed facts from estimates.
+- Never invent uplift, conversions or A/B winners. Call an experiment causal only when its report allows a causal claim.
+
+## 3. Changes
+Feed publication, title changes, labels, campaign changes and test launches are writes. Ask `ask_magnifai` in mode `prepare`; show the exact preview and the approval link. The owner approves in Magnify (a yes in chat is not approval); then resume `ask_magnifai` with the same request_id so it verifies the outcome.
