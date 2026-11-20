@@ -14,13 +14,14 @@ In Claude's plugin marketplace, add `https://github.com/wiserautomation/magnify-
 
 Alternatively, under **Customize → Connectors**, add the remote MCP server `https://mcp.magnifyshopping.com/mcp`. Authenticate using Claude's OAuth sign-in; never paste tokens into chat.
 
-Start with “Roast my Google Ads” or “Find my top 3 money leaks”.
+Start with “Roast my Google Ads”, “Find my top 3 money leaks” or “What did Magnify save and make for my clients this month?”.
 
 ## Capabilities and boundaries
 - `google-ads-audit`: roast, grade and evidence-backed performance and conversion diagnostics.
 - `shopping-pmax`: Shopping, PMax and Merchant Center investigations when connected data exists.
 - `supervised-optimization`: supported changes are proposed, require real owner approval and are verified after execution.
 - `google-ads-copywriting`: Search RSA and PMax headlines and descriptions (qualify, entice, prime) with dynamic keyword insertion `{KeyWord:Default}` headlines. Copy for your account goes through Magnify, which reviews every line before it can be proposed.
+- `value-report`: money saved, money made and time saved for one account or a whole agency portfolio, labelled as estimates, plus a client-ready monthly recap.
 - `negative-keywords`: phrase-match negative patterns instead of one exact negative per query, safety checks against converting terms and keywords, and shared negative keyword lists.
 - `keyword-research`: Keyword Planner volumes and bids, search intent classification, ad groups and a campaign structure sized to your budget and target CPA.
 

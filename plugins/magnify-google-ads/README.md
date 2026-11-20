@@ -8,6 +8,7 @@ Evidence-backed Google Ads and Merchant Center intelligence in Claude, powered b
 - Write Search and PMax headlines and descriptions with the Magnify Ad Copy Skill, including dynamic keyword insertion headlines.
 - Research keywords with real Keyword Planner volumes, group them by search intent and size the campaign structure to the budget and CPA.
 - Turn wasted search terms into a few phrase-match negative patterns and shared negative keyword lists.
+- Show what Magnify did for one account or a whole agency portfolio: money saved, money made and time saved, labelled as estimates, with a client-ready recap.
 - Prepare supported changes for explicit preview and approval; execution is not automatic.
 
 ## Requirements
@@ -22,7 +23,7 @@ From the Claude plugin directory, add **Magnify — Google Ads Intelligence**. I
 ```
 
 ## Getting started
-Enable the `magnify` MCP connection and complete the OAuth sign-in and workspace authorization when Claude prompts. Start with “Roast my Google Ads”, “Roast my Google Ads, extra hot” or “Find my top 3 money leaks”. In Spanish: “Haz un roast de mi Google Ads” or “Roast extra picante de mi Google Ads”.
+Enable the `magnify` MCP connection and complete the OAuth sign-in and workspace authorization when Claude prompts. Start with “Roast my Google Ads”, “Roast my Google Ads, extra hot” “Find my top 3 money leaks” or “What did Magnify save and make for my clients this month?”. In Spanish: “Haz un roast de mi Google Ads” or “Roast extra picante de mi Google Ads”.
 
 ## What this plugin runs and sends
 This plugin contains Skills, which are instruction text, and a reference to one remote MCP server: `https://mcp.magnifyshopping.com/mcp`, operated by WISER MARKETING SRL. It runs no local code, hooks or scripts, and it bundles no credentials.

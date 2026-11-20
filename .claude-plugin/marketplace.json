@@ -10,7 +10,7 @@
       "name": "magnify-google-ads",
       "source": "./plugins/magnify-google-ads",
       "description": "Roast your Google Ads: find wasted spend and fix it in chat. Analyze Google Ads and Merchant Center with account evidence. Prepare changes and require explicit approval before execution.",
-      "version": "1.5.0",
+      "version": "1.6.0",
       "category": "productivity"
     }
   ]
