@@ -17,13 +17,15 @@ Alternatively, under **Customize → Connectors**, add the remote MCP server `ht
 Start with “Roast my Google Ads”, “Find my top 3 money leaks” or “What did Magnify save and make for my clients this month?”.
 
 ## Capabilities and boundaries
-- `google-ads-audit`: roast, grade and evidence-backed performance and conversion diagnostics.
-- `shopping-pmax`: Shopping, PMax and Merchant Center investigations when connected data exists.
-- `supervised-optimization`: supported changes are proposed, require real owner approval and are verified after execution.
+- `google-ads-audit`: roast, grade and diagnose in the right order (tracking and feed before bids), with symptom trees and a review routine, using the fewest Magnify reads.
+- `shopping-pmax`: feed health and compliance, hero/sidekick/villain/zombie segmentation, campaign architecture by budget, Shopping and PMax playbooks.
+- `supervised-optimization`: bidding by data, target steps, budget scaling and learning-period rules; supported changes are proposed, require real owner approval and are verified after execution.
 - `google-ads-copywriting`: Search RSA and PMax headlines and descriptions (qualify, entice, prime) with dynamic keyword insertion `{KeyWord:Default}` headlines. Copy for your account goes through Magnify, which reviews every line before it can be proposed.
 - `value-report`: money saved, money made and time saved for one account or a whole agency portfolio, labelled as estimates, plus a client-ready monthly recap.
 - `negative-keywords`: phrase-match negative patterns instead of one exact negative per query, safety checks against converting terms and keywords, and shared negative keyword lists.
 - `keyword-research`: Keyword Planner volumes and bids, search intent classification, ad groups and a campaign structure sized to your budget and target CPA.
+
+The skills share one media-buyer playbook with the Magnify server (`plugins/magnify-google-ads/playbook-thresholds.json`). Claude does the analysis with Magnify's read tools, so fewer reads and fewer MagnifAI runs are needed.
 
 Availability depends on user, store permissions, tool support and live evidence. We **do not** promise unrestricted Google Ads writes or an inline Claude approval widget.
 

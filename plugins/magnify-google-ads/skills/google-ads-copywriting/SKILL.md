@@ -24,6 +24,28 @@ Optimize for qualified conversions (CPA/ROAS), not CTR or Ad Strength.
 - Pin sparingly.
 - PMax: up to 15 headlines (≤30), 5 long headlines (≤90), 5 descriptions (≤90). Aim for ≥11 headlines, ≥2 long headlines and ≥4 descriptions.
 
+## 3b. Headline types to fill the 15
+| Type | Purpose |
+| --- | --- |
+| Descriptive | Match the search; the more specific the better (product + model + attribute) |
+| Trust: authority | Look like the safe choice (official store, a verified ranking) |
+| Trust: longevity | An established business (year founded) |
+| Trust: proof | Reasons to believe (verified rating and review count, guarantee length) |
+| Urgency | Act now, sparingly (stock limit, offer end date) |
+| Price | For price searchers (bundle, free shipping threshold) |
+| Feature | Convenience or attributes (instalments, compatibility) |
+| Location | Delivery speed or local pride |
+| CTA | Lower the effort of the next step |
+| Comparison | Against alternatives, only with unprotected names |
+| Remarketing | The visitor's context |
+| Brand | Tie the purchase to the brand |
+
+Every claim must be verified on the landing page or in the account; remove urgency headlines when the date passes, and do not overuse urgency. For a selling hook, ask how the product helps the buyer make money, save money, save time, avoid effort or pain, gain comfort, health, recognition, belonging or status, and write one headline per answer. "The cheapest" positions the store as a discounter: use it only if that is the brand.
+
+**Standards**: complete 15 headlines and 4 descriptions; the ad group's keywords repeated in headlines; at most one pinned element (brand in position 1 on brand campaigns, or a clear CTA); brand spelled the same way everywhere; no exaggeration or exclamation marks; what the ad promises is visible above the fold on the landing page.
+
+**Customizers**: countdown `{COUNTDOWN(2026-11-30 23:59:59,5)}` for sales (shows 5 days before by default); location `{LOCATION(City):Default}`. Allowed separators that stand out: · • – — … ™ ® (stars and hearts are not allowed).
+
 ## 4. Dynamic keyword insertion (DKI): the underused advantage
 `{KeyWord:Default text}` is replaced by the ad group **keyword** that triggered the ad (the keyword, not the search term). If the keyword does not fit, Google shows the default text. The headline mirrors the searcher's wording, which raises relevance, CTR and Quality Score without extra ad groups.
 

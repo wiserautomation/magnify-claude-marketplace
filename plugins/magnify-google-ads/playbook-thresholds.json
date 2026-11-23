@@ -1,0 +1,23 @@
+{
+  "version": "media-buyer-playbook-2026-11-23-v2",
+  "note": "Same numbers as PLAYBOOK_THRESHOLDS in the Magnify server (supabase/functions/_shared/magnifaiMediaBuyerPlaybook.ts). Change both together; scripts/validate.mjs checks the skills use these values.",
+  "thresholds": {
+    "targetReadyConversions30d": 30,
+    "maximizeConversionsBelow30d": 15,
+    "targetStepPct": [10, 15],
+    "waitDaysBetweenTargetSteps": [7, 14],
+    "maxSimultaneousTargetAndBudgetChangePct": 20,
+    "budgetScaleUpPct": [15, 20],
+    "budgetScaleEveryDays": [3, 7],
+    "weeksAtTargetBeforeScaling": 2,
+    "notSpendingLowerTroasPct": 10,
+    "negateCostVsTargetCpa": [1.5, 2],
+    "excludeProductCostVsTargetCpa": 2,
+    "excludeProductMinClicks": 100,
+    "promoteSearchTermConversions": 2,
+    "heroMinConversions90d": 3,
+    "villainCostVsTargetCpa": 1.5,
+    "zombieMaxImpressions90d": 100,
+    "trackingGapPct": 15
+  }
+}

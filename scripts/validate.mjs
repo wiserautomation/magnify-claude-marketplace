@@ -42,6 +42,40 @@ for (const entry of marketplace.plugins ?? []) {
     check(text.startsWith("---\n") && text.includes("name: " + skill) && text.includes("description:"), "Skill frontmatter: " + skill);
   }
 }
+// Media-buyer playbook v2: the skills carry the same thresholds as the Magnify server
+// (PLAYBOOK_THRESHOLDS in supabase/functions/_shared/magnifaiMediaBuyerPlaybook.ts).
+{
+  const base = "plugins/magnify-google-ads";
+  const playbook = load(base + "/playbook-thresholds.json");
+  const t = playbook.thresholds ?? {};
+  check(playbook.version === "media-buyer-playbook-2026-11-23-v2", "Playbook thresholds version");
+  const skill = (name) => {
+    const dir = join(root, base, "skills", name);
+    const main = existsSync(join(dir, "SKILL.md")) ? readFileSync(join(dir, "SKILL.md"), "utf8") : "";
+    const refs = existsSync(join(dir, "references")) ? readdirSync(join(dir, "references")).map((f) => readFileSync(join(dir, "references", f), "utf8")).join("\n") : "";
+    for (const ref of main.match(/references\/[a-z-]+\.md/g) ?? []) check(existsSync(join(dir, ref)), "Skill reference exists: " + name + "/" + ref);
+    return main + "\n" + refs;
+  };
+  const range = (a) => Array.isArray(a) ? a[0] + "-" + a[1] : "";
+  const expect = [
+    ["supervised-optimization", "The first target is the actual last-30-day CPA or ROAS"],
+    ["supervised-optimization", `Move a target ${range(t.targetStepPct)}% per step, then wait ${range(t.waitDaysBetweenTargetSteps)} days`],
+    ["supervised-optimization", `more than ${t.maxSimultaneousTargetAndBudgetChangePct}% in the same week`],
+    ["supervised-optimization", `raise budget ${range(t.budgetScaleUpPct)}% every ${range(t.budgetScaleEveryDays)} days`],
+    ["supervised-optimization", `lower tROAS ${t.notSpendingLowerTroasPct}%`],
+    ["supervised-optimization", `Under ~${t.maximizeConversionsBelow30d} conversions in 30 days`],
+    ["negative-keywords", `cost >= ${range(t.negateCostVsTargetCpa)}x the target CPA with 0 conversions`],
+    ["negative-keywords", `Terms with ${t.promoteSearchTermConversions}+ conversions`],
+    ["shopping-pmax", `ROAS above target and ${t.heroMinConversions90d}+ conversions`],
+    ["shopping-pmax", `Cost > ${t.villainCostVsTargetCpa}x target CPA, 0 conversions`],
+    ["shopping-pmax", `Under ${t.zombieMaxImpressions90d} impressions`],
+    ["shopping-pmax", `cost >= ${t.excludeProductCostVsTargetCpa}x target CPA or ${t.excludeProductMinClicks}+ clicks`],
+    ["shopping-pmax", `about ${t.targetReadyConversions30d} conversions a month`],
+    ["google-ads-audit", `by more than ~${t.trackingGapPct}%`],
+    ["google-ads-audit", "Stop at the first broken layer"],
+  ];
+  for (const [name, phrase] of expect) check(skill(name).includes(phrase), "Playbook threshold in " + name + ": " + phrase);
+}
 for (const file of ["README.md", "SUBMISSION.md", "REVIEWER_GUIDE.md"]) check(existsSync(join(root, file)), "Documentation: " + file);
 for (const file of files) {
   if (!existsSync(join(root, file))) continue;
