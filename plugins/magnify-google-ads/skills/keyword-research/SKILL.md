@@ -5,12 +5,12 @@ description: Google Ads keyword research with real Keyword Planner search volume
 # Keyword research (Magnify Keyword Research Skill)
 
 ## 1. Get real data through Magnify
-Call `ask_magnifai` with the complete objective and every known input, for example: "Keyword research for <products/services> in <country>, <language>. Monthly budget <amount currency>, target CPA <amount>. Brand: <names>. Competitors: <names>. Use get_keyword_ideas and plan_keyword_structure; classify intent, group ad groups and size the structure to the budget."
-
-- Volumes, competition and top-of-page bids come from the **Google Ads Keyword Planner API** of the connected account (`get_keyword_ideas`), together with the account's real search terms. Missing volume is **unknown, not zero**.
-- `plan_keyword_structure` classifies intent, clusters keywords and sizes campaigns, ad groups and keywords from the budget and CPA.
+Read the data yourself and build the structure with the method below; do not hand the research to `ask_magnifai`.
+- Volumes, competition and top-of-page bids: `get_keyword_ideas` (3 units on Operator) with the seeds, country and language. They come from the **Google Ads Keyword Planner API** of the connected account. Missing volume is **unknown, not zero**.
+- The account's own winners: `get_search_terms` (4 units) once for a stated period. Search, Shopping and PMax terms with 2+ conversions at or above target are the best seeds.
 - If budget, target CPA, country or language are missing, ask once. Without a target CPA, give the CPA the budget implies.
-- If no Google Ads account is connected, say so: there are no real volumes. Any list without Planner data is ideas only and must be labelled as such.
+- If no Google Ads account is connected, say so: there are no real volumes, and any list is ideas only, labelled as such.
+- Use `ask_magnifai` in mode `prepare` only to create the campaigns or keywords the owner wants, passing your structure.
 
 ## 2. Method
 1. **Seeds**: products, services and categories, converting search terms, landing pages.
@@ -28,7 +28,8 @@ Call `ask_magnifai` with the complete objective and every known input, for examp
    - Ad groups the budget can feed ≈ clicks ÷ ~100 per ad group per month. Keep **3-20 keywords per ad group**. Defer the remaining clusters with a reason.
    - Bidding: ≥30 conversions/month → tCPA; ~15-30 → Maximize conversions; fewer → Maximize clicks with a CPC cap and fewer ad groups.
    - Match types: exact + phrase for high intent, phrase for commercial, exact for competitors; broad only with smart bidding and enough conversions.
-6. **Copy hand-off**: flag tightly themed ad groups for 1-3 dynamic keyword insertion headlines (see the `google-ads-copywriting` skill).
+6. **Campaign types**: brand, generic by category, long tail from winning terms, Dynamic Search Ads and competitors each have their own rules: `references/search-campaigns.md`.
+7. **Copy hand-off**: flag tightly themed ad groups for 1-3 dynamic keyword insertion headlines (see the `google-ads-copywriting` skill).
 
 ## 3. Output
 1. **Economics**: budget, estimated CPC, clicks, conversions, projected CPA vs target, recommended bidding, assumptions.
