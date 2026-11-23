@@ -58,6 +58,13 @@ Amounts are observed spend to review, not guaranteed savings. Magnify does not p
 
 **Compliance:** check the contact email, then four acknowledgements, accepted by the owner.
 
+## Update 2026-11-23 (plugin 1.7.0, connector catalogue +1)
+
+- **Plugin 1.7.0**: the six Google Ads skills carry the media-buyer playbook v2 and work analyst-first (fewer Magnify reads, fewer MagnifAI runs). No new permissions, hooks, scripts or data flows. The push webhook delivers it; the listing text above still applies.
+- **Connector**: `get_ppc_playbook` is enabled (read-only, static guidance, no account data, not metered; annotations `readOnlyHint=true`, `destructiveHint=false`, `openWorldHint=false`). The catalogue goes from 59 to 60 tools once Lovable sets `MAGNIFY_PPC_PLAYBOOK_MCP_ENABLED=true`. Re-run the portal tool scan after that, then resubmit.
+- `diagnose_conversion_setup` may now include `store_sales_check` (MER and the Google Ads vs GA4 tracking gap, computed by Magnify). Same tool, same annotations.
+- Optional reviewer prompt (not required in the portal): "What does Magnify's playbook say about when to set a target CPA?" → `get_ppc_playbook`, returns guidance only.
+
 ## Release gates
 
 Evidence as of 2026-11-01. A box stays unchecked until it is proven on the deployed revision.
