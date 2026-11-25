@@ -12,7 +12,7 @@ description: Create Google Ads negative keywords and negative keyword lists from
 | va loan jobs · mortgage loan officer jobs near me | 2 exact negatives | `"jobs"` phrase |
 
 ## 1. Get real data through Magnify
-Read the search terms yourself once: `get_search_terms` (4 units on Operator) for a stated period, campaign or account. Apply the method below to find the patterns. To build, fill and attach the negatives and shared lists in one approval, call `ask_magnifai` in mode `prepare` with your patterns, for example: "Create these phrase-match negatives and a General plus per-category negative keyword lists with plan_negative_keywords and build_negative_keyword_lists_plan: <patterns>." Pass your analysis so MagnifAI does not re-read everything. Changes are applied only after the owner approves them in Magnify.
+Read the search terms yourself once: `get_search_terms` (4 units on Operator) for a stated period, campaign or account. Apply the method below to find the patterns. To build, fill and attach the negatives and shared lists in one approval, call `prepare_negative_keyword_lists` with your lists and patterns (`dry_run: true` first): Magnify drops any negative that would block an active keyword or a converting search term and tells you which. For a few negatives on one campaign use `prepare_owner_requested_negative_keywords`.
 
 **When a relevant term is waste, not intent.** A term that matches what the store sells is negated only after cost >= 1.5-2x the target CPA with 0 conversions, and after checking the product title, price and landing page: the problem may be the product, not the query. Terms with 2+ conversions at or above target are not negatives: they become keywords and title words (keyword-research skill).
 

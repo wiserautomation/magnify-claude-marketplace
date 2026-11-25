@@ -10,7 +10,7 @@ Read the data yourself and build the structure with the method below; do not han
 - The account's own winners: `get_search_terms` (4 units) once for a stated period. Search, Shopping and PMax terms with 2+ conversions at or above target are the best seeds.
 - If budget, target CPA, country or language are missing, ask once. Without a target CPA, give the CPA the budget implies.
 - If no Google Ads account is connected, say so: there are no real volumes, and any list is ideas only, labelled as such.
-- Use `ask_magnifai` in mode `prepare` only to create the campaigns or keywords the owner wants, passing your structure.
+- To create it, build the campaign yourself with `prepare_search_campaign`: your ad groups, keywords and match types, one or more RSAs per ad group (google-ads-copywriting skill), negatives, budget, bidding and targeting (`copy_targeting_from_campaign_id` copies an existing campaign's locations and languages). Run it with `dry_run: true` first; if it answers `status: invalid`, fix every listed field and call it again. To add keywords to an existing ad group use `prepare_owner_requested_keywords_addition`. Do not hand the build to `ask_magnifai`.
 
 ## 2. Method
 1. **Seeds**: products, services and categories, converting search terms, landing pages.
