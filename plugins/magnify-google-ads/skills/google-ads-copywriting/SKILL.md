@@ -7,7 +7,7 @@ description: Write or rewrite Google Ads headlines, titles and descriptions (Sea
 Always use this skill for any headline or description, even a single line. Good copy is a requirement, not a nice-to-have.
 
 ## 1. Route the request
-- **The copy is for the user's own account** (a campaign, ad group, product or landing page in Magnify, or they want it applied): call `ask_magnifai` with the full objective, e.g. "Write RSA headlines and descriptions for ad group X using the Ad Copy Skill, with 1-3 dynamic keyword insertion headlines; review them with review_ad_copy_draft". MagnifAI reads the real keywords, search terms and landing page, runs the mandatory review, and only proposes copy that passed it. Show its copy and the review result. Changes go live only after the owner approves them in Magnify.
+- **The copy is for the user's own account**: read what it must match yourself (the ad group's keywords and current ads with `list_search_ad_resources` and `get_search_ad_creative_evidence`, converting queries with `get_search_terms`), then write it with the rules below. Apply it with `prepare_search_ad_replacement` and `prepare_owner_requested_search_ad_replacement` for an existing ad, or inside `prepare_search_campaign` for a new campaign: Magnify checks every headline and description against Google's limits and returns each problem with its field.
 - **Generic copy, no account data needed**: write it yourself with the rules below. Do not call Magnify.
 
 ## 2. Method: QUALIFY → ENTICE → PRIME

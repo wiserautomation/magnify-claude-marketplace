@@ -38,7 +38,9 @@ Read only what the decision needs: `get_performance` (2 units on Operator) for t
 ## 2. Prepare the change
 - **One exact change** ("pause campaign X", "set the target CPA to 40"): use the typed `prepare_owner_requested_*` or `prepare_*` tool when one exists, or `list_google_ads_capabilities`, `describe_google_ads_capability` and `prepare_google_ads_change`, with IDs from Magnify reads. No AI cost.
 - **Replace a Search ad**: `list_search_ad_resources`, `get_search_ad_creative_evidence`, then `prepare_search_ad_replacement` with the complete copy; pass its `action_parameters` unchanged to `prepare_google_ads_change`. Magnify computes the source fingerprint: never invent one.
-- **A multi-resource build** (negative lists, a new campaign from research, reviewed ad copy for the account): `ask_magnifai` in mode `prepare` with the full objective and the analysis you already did.
+- **A new Search campaign**: design it yourself and call `prepare_search_campaign` (`dry_run: true` first). **Shared negative keyword lists**: `prepare_negative_keyword_lists`. **Standard Shopping**: `prepare_standard_shopping_campaign`. Any other exact multi-resource change: `request_google_ads_change_for_owner_review` when listed. When a tool answers `status: invalid` or `invalid_arguments`, fix every listed field and call it again once.
+- **An expired preview**: `renew_prepared_action` with its `request_id`; never rebuild it.
+- **Only when no tool covers the build** (Performance Max, Display, Demand Gen, cloning a campaign): `ask_magnifai` in mode `prepare` with the user's request in their own words, not internal tool names.
 
 ## 3. Approval
 Show the exact preview: what changes, where, the expected effect, risks and how to undo it. Give the approval link. Approval happens only on the signed-in Magnify page. A "yes" in chat is never approval: never call an execute tool because the user agreed in chat.
